@@ -88,7 +88,19 @@ by this name, in addition to the test binary, module, and line number.
 Multiple `name=IDENT` words may not appear in a single code block's info
 string.
 
-Voilating any of the above restrictions results in a compilation error.
+`name=IDENT` may be combined with existing annotations like `rust` or
+`should_panic` by separating the annotations with commas:
+
+````
+
+```rust,name=foo
+assert!(true)
+```
+
+````
+
+The ability to include multiple comma-separated annotations is an existing
+feature.
 
 # Drawbacks
 [drawbacks]: #drawbacks
